@@ -1,8 +1,8 @@
 //imports
 const fastify = require("fastify")();
 const mongoose = require("mongoose");
-const userRoutes = require("./routes/users");
-const postRoutes = require("./routes/posts");
+const userRoutes = require("./routes/usersRoutes");
+const postRoutes = require("./routes/postsRoutes");
 
 // // mongo connect
 const MONGODB_URI =
