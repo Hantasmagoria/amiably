@@ -2,11 +2,7 @@
 const boom = require("boom");
 
 // Get Data Models
-try {
-  const Post = require("../models/Posts");
-} catch (err) {
-  throw boom.boomify(err);
-}
+const Post = require("../models/Posts");
 
 // Get all users
 exports.getPosts = async (req, reply) => {

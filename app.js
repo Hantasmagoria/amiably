@@ -14,7 +14,7 @@ mongoose
     useUnifiedTopology: true
   })
   .then(() => {
-    // console.log(`MongoDB connected…`);
+    console.log(`MongoDB connected…`);
   })
   .catch(err => console.log(err));
 
@@ -55,10 +55,9 @@ const start = async () => {
     if (err) {
       console.log(err);
       process.exit(1);
+    } else {
+      console.log("Listening to port " + port);
     }
-    // else {
-    //   console.log("Listening to port " + port);
-    // }
   });
   fastify.swagger();
 };
