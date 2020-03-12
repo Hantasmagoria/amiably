@@ -2,8 +2,8 @@
 const boom = require("boom");
 
 // Get Data Models
-// const Users = require("../models/users");
-import { Users } from "../models/users";
+const Users = require("../models/users");
+// import { Users } from "../models/users";
 
 // Get all users
 exports.getUsers = async (req, reply) => {
