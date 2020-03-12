@@ -3,7 +3,6 @@ const fastify = require("fastify")();
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/users");
 const postRoutes = require("./routes/posts");
-// const swagger = require("./config/swagger");
 
 // // mongo connect
 const MONGODB_URI =
@@ -15,7 +14,7 @@ mongoose
     useUnifiedTopology: true
   })
   .then(() => {
-    console.log(`MongoDB connected…`);
+    // console.log(`MongoDB connected…`);
   })
   .catch(err => console.log(err));
 
@@ -47,8 +46,8 @@ postRoutes.forEach((route, i) => {
   fastify.route(route);
 });
 
-// //cors >:(
-// app.register(require("fastify-cors"), {});
+//cors >:(
+fastify.register(require("fastify-cors"), {});
 
 //listener
 const port = process.env.PORT || 3000;
@@ -57,9 +56,10 @@ const start = async () => {
     if (err) {
       console.log(err);
       process.exit(1);
-    } else {
-      console.log("Listening to port " + port);
     }
+    // else {
+    //   console.log("Listening to port " + port);
+    // }
   });
   fastify.swagger();
 };
