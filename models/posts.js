@@ -16,6 +16,10 @@ const postSchema = new mongoose.Schema({
   createdDate: {
     type: Date,
     required: true
+  },
+  uniqueURL: {
+    type: String,
+    requred: true
   }
 });
 
