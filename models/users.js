@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
     required: true
   },
   posts: {
-    type: [PostSchema],
+    type: [String],
     default: undefined
   }
 });
