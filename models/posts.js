@@ -8,6 +8,14 @@ const postSchema = new mongoose.Schema({
   content: {
     type: String,
     required: true
+  },
+  doesExpire: {
+    type: Boolean,
+    required: true
+  },
+  createdDate: {
+    type: Date,
+    required: true
   }
 });
 
