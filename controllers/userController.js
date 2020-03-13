@@ -49,12 +49,11 @@ exports.addUser = async (req, reply) => {
 
 // Update an existing user
 exports.updateUser = async (req, reply) => {
-  console.log(Users.findOne(JSON.parse(req.body).username));
   try {
-    const id = JSON.parse(req.body).username;
+    const id = req.body.username;
     const updateData = {
-      url: JSON.parse(req.body).url,
-      title: JSON.parse(req.body).title
+      url: req.body.url,
+      title: req.body.title
     };
 
     const update = await Users.findOneAndUpdate(
