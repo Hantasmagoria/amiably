@@ -50,13 +50,11 @@ exports.addUser = async (req, reply) => {
 // Update an existing user
 exports.updateUser = async (req, reply) => {
   try {
-    // console.log(req.body);
-
-    // const id = JSON.parse(req.body).username;
-    // const user = JSON.parse(req.body);
-    // const { ...updateData } = user;
-    const id = "admin";
-    const updateData = { url: "7xlf305f", title: "My First Post" };
+    const id = JSON.parse(req.body).username;
+    const updateData = {
+      url: JSON.parse(req.body).url,
+      title: JSON.parse(req.body).title
+    };
 
     const update = await Users.findOneAndUpdate(
       id,
