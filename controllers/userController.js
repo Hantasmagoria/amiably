@@ -56,6 +56,8 @@ exports.updateUser = async (req, reply) => {
       title: JSON.parse(req.body).title
     };
 
+    console.log(Users.findOne(id));
+
     const update = await Users.findOneAndUpdate(
       id,
       { $push: { posts: updateData } },
