@@ -58,9 +58,13 @@ exports.updateUser = async (req, reply) => {
     const id = "admin";
     const updateData = { url: "7xlf305f", title: "My First Post" };
 
-    const update = await Users.findOneAndUpdate(id, posts.push(updateData), {
-      new: true
-    });
+    const update = await Users.findOneAndUpdate(
+      id,
+      { $push: { ...updateData } },
+      {
+        new: true
+      }
+    );
     console.log(update);
     return update;
   } catch (err) {
