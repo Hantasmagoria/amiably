@@ -40,7 +40,7 @@ exports.addBySeeding = async (req, reply) => {
 exports.addUser = async (req, reply) => {
   try {
     console.log(req.body);
-    const user = new Users(JSON.parse(req.body));
+    const user = new Users(...JSON.parse(req.body));
     return user.save();
   } catch (err) {
     throw boom.boomify(err);
