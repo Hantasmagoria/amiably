@@ -9,10 +9,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  posts: {
-    type: [String],
-    default: undefined
-  }
+  posts: [{ url: String, title: String }]
 });
 
 const Users = mongoose.model("Users", UserSchema);

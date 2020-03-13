@@ -53,7 +53,9 @@ exports.updateUser = async (req, reply) => {
     const id = JSON.parse(req.body).username;
     const user = JSON.parse(req.body);
     const { ...updateData } = user;
-    const update = await Users.findOneAndUpdate(id, updateData, { new: true });
+    const update = await Users.findOneAndUpdate(id, posts.push(updateData), {
+      new: true
+    });
     return update;
   } catch (err) {
     throw boom.boomify(err);
