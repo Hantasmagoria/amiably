@@ -18,8 +18,8 @@ exports.getUsers = async (req, reply) => {
 // Get single user by ID
 exports.getSingleUser = async (req, reply) => {
   try {
-    const id = req.params.id;
-    const user = await Users.findById(id);
+    const id = req.body;
+    const user = await Users.findOne(id);
     return user;
   } catch (err) {
     throw boom.boomify(err);
@@ -39,7 +39,7 @@ exports.addBySeeding = async (req, reply) => {
 // Add a new user
 exports.addUser = async (req, reply) => {
   try {
-    const user = new Users(req.body);
+    const user = new Users(JSON.parse(req.body));
     return user.save();
   } catch (err) {
     throw boom.boomify(err);
@@ -49,10 +49,10 @@ exports.addUser = async (req, reply) => {
 // Update an existing user
 exports.updateUser = async (req, reply) => {
   try {
-    const id = req.params.id;
-    const user = req.body;
+    const id = JSON.parse(req.body).username;
+    const user = JSON.parse(req.body);
     const { ...updateData } = user;
-    const update = await Users.findByIdAndUpdate(id, updateData, { new: true });
+    const update = await Users.findOneAndUpdate(id, updateData, { new: true });
     return update;
   } catch (err) {
     throw boom.boomify(err);

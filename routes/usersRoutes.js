@@ -9,7 +9,7 @@ const routes = [
   },
   {
     method: "GET",
-    url: "/users/:id",
+    url: "/users/",
     handler: userController.getSingleUser
   },
   {
@@ -19,7 +19,7 @@ const routes = [
   },
   {
     method: "PUT",
-    url: "/users/:id",
+    url: "/users/",
     handler: userController.updateUser
   },
   {
