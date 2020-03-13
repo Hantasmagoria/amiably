@@ -8,7 +8,7 @@ const routes = [
     handler: userController.getUsers
   },
   {
-    method: "GET",
+    method: "POST",
     url: "/users/",
     handler: userController.getSingleUser
   },
