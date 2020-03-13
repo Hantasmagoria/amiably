@@ -60,7 +60,7 @@ exports.updateUser = async (req, reply) => {
 
     const update = await Users.findOneAndUpdate(
       id,
-      { $push: { ...updateData } },
+      { $push: { posts: updateData } },
       {
         new: true
       }
