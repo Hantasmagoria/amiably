@@ -19,7 +19,7 @@ mongoose
   .catch(err => console.log(err));
 
 // routes
-fastify.register(require("fastify-swagger"), {
+fastify.register(require("@fastify/swagger"), {
   routePrefix: "/documentation",
   swagger: {
     info: {
