@@ -21,7 +21,7 @@
     "@fastify/swagger": "^7.5.0",
     "boom": "^7.3.0",
     "fastify": "^2.12.1",
-    "fastify-cors": "^3.0.2",
+    "fastify-cors": "^6.1.0",
     "fastify-swagger": "^5.2.0",
     "mongoose": "^5.9.4"
   }
